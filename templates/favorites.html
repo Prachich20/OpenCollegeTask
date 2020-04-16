@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorites</title>
+    <h1>Favorites</h1>
+</head>
+<body>
+<a href="{{ url_for('dropdown')}}">Go back to search</a>
+</br></br>
+ <tr>
+        {% for record in fav%}
+        <td>
+            <img src="{{record.url}}" alt="image" width="150" height="150">
+            Longitude: {{record.latitude}}
+            Latitude: {{record.longitude}}
+</br>
+        </td>
+        {% endfor %}
+    </tr>
+</body>
+</html>

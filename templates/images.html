@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    <style>
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+    </style>
+</head>
+<body>
+<h1>Images</h1>  <a href="{{ url_for('dropdown')}}">Go back to search</a>
+<a href="{{ url_for('favorite')}}">View favorites</a>
+<form action="/getPhotos" name="photos" id="photos" method="POST">
+    <tr>
+        Latitude: {{latitude}}</br>
+        Longitude: {{longitude}} </br>
+
+        Error message: {{message}}
+    </tr>
+    <tr>
+        {% for record in photos_data%}
+        <td>
+            <a target="_self" href="{{ url_for('getPhotos', favorite=true, url=record.url, pagenumber=page, Latitude=latitude, Longitude=longitude)}}">
+                <img src="{{record.url}}" alt="image" width="150" height="150">
+            </a>
+
+        </td>
+        {% endfor %}
+    </tr>
+    <tr>
+        <td>
+            </br>
+            Page number: {{page}}</br>
+            <a href="{{ url_for('getPhotos', pagenumber = page-1, Latitude = latitude, Longitude = longitude)}}">Previous</a>
+            <a href="{{ url_for('getPhotos', pagenumber = page+1, Latitude = latitude, Longitude = longitude)}}">Next</a>
+        </td>
+    </tr>
+</form>
+</body>
+</html>

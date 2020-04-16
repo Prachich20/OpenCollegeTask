@@ -1,0 +1,10 @@
+version: '2'
+services:
+    web:
+        build: .
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/web
+        environment:
+          - API_KEY: 8bb681989754de8208c7a3d6b0416f55

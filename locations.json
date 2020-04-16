@@ -1,0 +1,55 @@
+{
+  "locations": [
+    {
+      "name": "Sydney",
+      "latitude": "-33.861481",
+      "longitude": "151.205475"
+    },
+    {
+      "name": "Canberra",
+      "latitude": "-35.27603",
+      "longitude": "149.13435"
+    },
+    {
+      "name": "Brisbane",
+      "latitude": "-27.47101",
+      "longitude": "153.024292"
+    },
+    {
+      "name": "Brussels",
+      "latitude": "50.833333",
+      "longitude": "4.33333"
+    },
+    {
+      "name": "Zurich",
+      "latitude": "47.366667",
+      "longitude": "8.55"
+    },
+    {
+      "name": "Geneva",
+      "latitude": "46.195602",
+      "longitude": "6.148113"
+    },
+    {
+      "name": "Shanghai",
+      "latitude": "31.222222",
+      "longitude": "121.458056"
+    },
+    {
+      "name": "Beijing",
+      "latitude": "39.928819",
+      "longitude": "116.388869"
+    },
+    {
+      "name": "London",
+      "latitude": "51.514248",
+      "longitude": "-0.093145"
+    },
+    {
+      "name": "Birmingham",
+      "latitude": "52.466667",
+      "longitude": "-1.916667"
+    }
+  ]
+}
+

@@ -1,0 +1,3 @@
+from flickrapi import FlickrAPI
+
+

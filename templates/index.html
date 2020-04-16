@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Images</title>
+</head>
+<body>
+<form action="{{ url_for('getPhotos', pagenumber = 1) }}" method="GET">
+    <h1>Search Photos</h1>
+    Select locations : <select name=locations method="GET" action="/">
+        {% for item in locations_data %}
+        <option value="{{ item['name']}}" SELECTED>{{item['name']}}</option>
+        {% endfor %}
+    </select><br/><br/>
+    Latitude : <input type="text" name="Latitude">
+    Longitude : <input type="text" name="Longitude">
+     <input type="submit" value="Get photos"/>
+</form>
+
+</body>
+</html>
