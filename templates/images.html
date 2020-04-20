@@ -22,15 +22,19 @@ img:hover {
 <a href="{{ url_for('favorite')}}">View favorites</a>
 <form action="/getPhotos" name="photos" id="photos" method="POST">
     <tr>
-        Latitude: {{latitude}}</br>
-        Longitude: {{longitude}} </br>
-
+        <td>
+        Place: {{geo.location}} </br>
+        Latitude: {{geo.latitude}}</br>
+        Longitude: {{geo.longitude}} </br>
+            {% if message %}
         Error message: {{message}}
+           {% endif %}
+        </td>
     </tr>
     <tr>
         {% for record in photos_data%}
         <td>
-            <a target="_self" href="{{ url_for('getPhotos', favorite=true, url=record.url, pagenumber=page, Latitude=latitude, Longitude=longitude)}}">
+            <a target="_self" href="{{ url_for('getPhotos', pagenumber = 1, favorite=true, url=record.url, latitude=geo.latitude, longitude=geo.longitude, locations=geo.location)}}">
                 <img src="{{record.url}}" alt="image" width="150" height="150">
             </a>
 
@@ -41,8 +45,8 @@ img:hover {
         <td>
             </br>
             Page number: {{page}}</br>
-            <a href="{{ url_for('getPhotos', pagenumber = page-1, Latitude = latitude, Longitude = longitude)}}">Previous</a>
-            <a href="{{ url_for('getPhotos', pagenumber = page+1, Latitude = latitude, Longitude = longitude)}}">Next</a>
+            <a href="{{ url_for('getPhotos', pagenumber = page-1, latitude = latitude, longitude = longitude)}}">Previous</a>
+            <a href="{{ url_for('getPhotos', pagenumber = page+1, latitude = latitude, longitude = longitude)}}">Next</a>
         </td>
     </tr>
 </form>

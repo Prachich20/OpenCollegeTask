@@ -1,10 +1,10 @@
-version: '2'
+version: '3.7'
 services:
-    web:
+    dockerOpenCollege:
         build: .
         ports:
             - "5000:5000"
         volumes:
             - .:/web
         environment:
-          - API_KEY: 8bb681989754de8208c7a3d6b0416f55
+          'API_KEY': '8bb681989754de8208c7a3d6b0416f55'
