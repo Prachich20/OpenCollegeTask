@@ -8,3 +8,5 @@
 
 
 Run docker built and docker-compose up command to run docker container.
+ >> docker build -t openapp .
+ >> docker-compose up -d
