@@ -4,17 +4,24 @@ import json
 import os
 
 flickr_api = 'https://www.flickr.com/services/rest/?method=flickr.photos.search'
-# key = os.environ['API_KEY']
-key = '8bb681989754de8208c7a3d6b0416f55'
+key = os.environ['API_KEY']
 
 
 class Common:
 
+    def load(self, parsed_locations):
+        """method to add locations"""
+        locations = []
+        locations.append({'name': 'Select location'})
+        for item in parsed_locations:
+            locations.append(item)
+        return locations
+
     def favorites(self, fav_latitude, fav_longitude):
         """method to add favorites"""
-        url_ = request.args.get('url')
+        url = request.args.get('url')
         json_object = {
-            "url": url_,
+            "url": url,
             "latitude": fav_latitude,
             "longitude": fav_longitude,
         }
